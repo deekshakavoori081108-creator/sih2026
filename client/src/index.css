@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  }
+
+  body {
+    background-color: #080c16;
+    color: #e2e8f0;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-epic {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom visual accents & Glassmorphism */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-gold {
+  background: linear-gradient(135deg, rgba(30, 27, 20, 0.85) 0%, rgba(15, 23, 42, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.glass-panel-amber {
+  background: linear-gradient(135deg, rgba(40, 25, 15, 0.75) 0%, rgba(20, 15, 30, 0.85) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+}
+
+.glow-blue {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.25);
+}
+
+.glow-purple {
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080c16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Parchment subtle texture */
+.parchment-bg {
+  background-color: #121624;
+  background-image: radial-gradient(rgba(245, 158, 11, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Pulse animation for cliffhanger and streak flame */
+@keyframes flamePulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 16px rgba(249, 115, 22, 0.9));
+  }
+}
+
+.flame-active {
+  animation: flamePulse 2s infinite ease-in-out;
+}
